@@ -1,0 +1,24 @@
+def sum_dig_pow(a, b): # range(a, b + 1) will be studied by the function
+    eureka = []
+    
+    #create a list of all of the numbers in the range as string
+    lst = [str(i) for i in range(a,b+1)]
+
+    for num in lst:
+        
+        #separate the number into individual digits and convert them to integers
+        number = [int(i) for i in num]
+        
+        result = 0
+        count = 0
+        
+        #while loop to perform the Eureka operation
+        while count < len(number):
+            result+=number[count]**(count+1)
+            count+=1
+        
+        #check if the result is equal to the original number, if it is, append to "eureka" array
+        if result == int(num):
+            eureka.append(int(num))
+            
+    return eureka    
